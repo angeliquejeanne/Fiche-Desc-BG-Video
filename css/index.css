@@ -1,94 +1,279 @@
-body 
+*{
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #000; 
+  width: 100%;
+  height: 100vh;
+}
+
+#bgvid { 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background: url('./img/godzi2.jpg') no-repeat;
+  background-size: cover;
+  transition: 6s opacity;
+}
+.stopfade { 
+  opacity: .5;
+}
+
+#films { 
+  font-weight:100; 
+  background: rgba(0, 0, 0, 0.404);
+  color: white;
+  padding: 2rem;
+  width: 40%;
+  margin:2rem;
+  float: right;
+  font-size: 1.2rem;
+}
+
+#films .b-annonce {
+  display: none;
+}
+
+#films h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: .3rem;
+}
+#films button { 
+  display: block;
+  width: 80%;
+  padding: .4rem;
+  border: none; 
+  margin: 1rem auto; 
+  font-size: 1.3rem;
+  background: rgba(141, 141, 141, 0.23);
+  color: #fff;
+  border-radius: 3px; 
+  cursor: pointer;
+  transition: 5s background;
+}
+#films button:hover { 
+  background: snow;
+  color: #000;
+}
+  
+a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background:rgba(0,0,0,0.5);
+  padding: .5rem;
+  transition: 5s background; 
+}
+a:hover
 {
-    margin: 0;
-    background: #000; 
+  background:rgba(0, 0, 0, 0.548);
+}
+.b-annonce {
+  float: left;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+iframe {
+  width:680px; 
+  height:380px;
+}
+/*media queries*/
+@media screen and (min-width:320px) {
+  #bgvid { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background: url('./img/godzi2.jpg') no-repeat;
+    background-size: cover;
+    transition: 6s opacity;
   }
-  video 
-  { 
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      z-index: -100;
-      transform: translateX(-50%) translateY(-50%);
-      background: url('./img/godzi2.jpg') no-repeat;
-      background-size: cover;
-      transition: 6s opacity;
-  }
-  .stopfade 
-  { 
-     opacity: .5;
+
+  body { 
+    background: url(./img/godzi2.jpg); 
   }
   
-  #films
-  { 
-    font-weight:100; 
+  #films {
+    font-weight: 100;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    padding: 1rem;
+    width: 80%;
+    margin: 2rem 1.5rem 2rem 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  #films h1 {
+    font-size: 1.8rem;
+  }
+
+  #films article p strong:nth-child(1),
+  #films article p strong:nth-child(2),
+  #films article p strong:nth-child(3),
+  #films article p strong:nth-child(4),
+  #films article p strong:nth-child(5),
+  #films article p strong:nth-child(6),
+  #films article p strong:nth-child(7),
+  #films article p strong:nth-child(8),
+  #films article p strong:nth-child(9){
+    font-size: 1.1rem;
+  }
+
+  #films article p:nth-child(1),
+  #films article p:nth-child(2),
+  #films article p:nth-child(3),
+  #films article p:nth-child(4),
+  #films article p:nth-child(5),
+  #films article p:nth-child(6),
+  #films article p:nth-child(7),
+  #films article p:nth-child(8),
+  #films article p:nth-child(9){
+    font-size: .9rem;
+  }
+  #films .critique h2 {
+    font-size: 1.1rem;
+  }
+  #films .critique .button {
+    font-size: .9rem;
+  }
+  #films .commentaire h2 {
+    font-size: 1.1rem;
+  }
+  #films .commentaire p {
+    font-size: .9rem;
+  }
+  #films .commentaire .button {
+    font-size: .7rem;
+  }
+}
+@media screen and (min-width:425px) {
+  #films {
+    font-weight: 100;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    padding: 1rem;
+    width: 90%;
+    margin: 2rem 1.5rem 2rem 1.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width:768px) {
+  #films {
+    font-weight: 100;
     background: rgba(0, 0, 0, 0.404);
     color: white;
     padding: 2rem;
-    width: 40%;
-    margin:2rem;
+    width: 60%;
+    margin: 2rem 2rem 0rem 2rem;
     float: right;
     font-size: 1.2rem;
   }
-  h1 
-  {
-    font-size: 3rem;
-    text-transform: uppercase;
-    margin-top: 0;
-    letter-spacing: .3rem;
+}
+
+@media screen and (min-width:1024px) {
+  #films {
+    font-weight: 100;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    padding: 2rem;
+    width: 50%;
+    margin: 2rem 5rem 0rem 2rem;
+    float: right;
+    font-size: 1.2rem;
   }
-  #films button 
-  { 
-    display: block;
-    width: 80%;
-    padding: .4rem;
-    border: none; 
-    margin: 1rem auto; 
-    font-size: 1.3rem;
-    background: rgba(141, 141, 141, 0.23);
-    color: #fff;
-    border-radius: 3px; 
-    cursor: pointer;
-    transition: 5s background;
+
+  #films h1 {
+    font-size: 2rem;
   }
-  #films button:hover 
-  { 
-     background: rgba(0, 0, 0, 0.171);
+}
+
+@media screen and (min-width:1280px) {
+  #films {
+    font-weight: 100;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    padding: 2rem;
+    width: 60%;
+    margin: 2rem 3rem 0rem 2rem;
+    float: right;
+    font-size: 1.2rem;
   }
-  
-  a {
-    display: inline-block;
-    color: #fff;
-    text-decoration: none;
-    background:rgba(0,0,0,0.5);
-    padding: .5rem;
-    transition: 5s background; 
+
+  #films h1 {
+    font-size: 2.5rem;
   }
-  a:hover
-  {
-    background:rgba(0, 0, 0, 0.548);
+
+  #films article p strong:nth-child(1),
+  #films article p strong:nth-child(2),
+  #films article p strong:nth-child(3),
+  #films article p strong:nth-child(4),
+  #films article p strong:nth-child(5),
+  #films article p strong:nth-child(6),
+  #films article p strong:nth-child(7),
+  #films article p strong:nth-child(8),
+  #films article p strong:nth-child(9){
+    font-size: 1.5rem;
   }
-  .b-annonce
-  {
-      float: left;
-      position: absolute;
-      top: 20%;
-      left: 10%;
+
+  #films article p:nth-child(1),
+  #films article p:nth-child(2),
+  #films article p:nth-child(3),
+  #films article p:nth-child(4),
+  #films article p:nth-child(5),
+  #films article p:nth-child(6),
+  #films article p:nth-child(7),
+  #films article p:nth-child(8),
+  #films article p:nth-child(9){
+    font-size: 1.2rem;
   }
-  iframe
-  {
-      width:680px; 
-      height:380px;
+
+  #films .critique h2 {
+    font-size: 1.5rem;
   }
-  @media screen and (max-width: 500px) { 
-    div{width:70%;} 
+
+  #films .critique .button {
+    font-size: 1rem;
   }
-  @media screen and (max-device-width: 800px) {
-    html { background: url(./img/godzi2.jpg) #000 no-repeat center fixed; }
-    #bgvid { display: none; }
+
+  #films .commentaire h2 {
+    font-size: 1.5rem;
   }
-  
+
+  #films .commentaire p {
+    font-size: 1.2rem;
+  }
+
+  #films .commentaire .button {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-device-width: 800px) {
+  html { 
+    background: url(./img/godzi2.jpg); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+}
